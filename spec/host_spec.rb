@@ -3,7 +3,7 @@ require "spec_helper"
 describe Host do
   let(:host) { described_class.new("John Doe") }
 
-  describe "#total_outcome" do
+  describe "#total_payout" do
     it "works correctly" do
       # Create few offers
       cheerful_room = Offer.new(:room, "Cheerful Room in Berlin", 100)

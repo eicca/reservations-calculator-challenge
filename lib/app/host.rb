@@ -12,19 +12,19 @@ class Host
   def total_payout
     outcome = 0
     @offers.each do |offer|
-      tmp_outcome = 0
+      tmp_payout = 0
       offer.reservations.each do |reservation|
         case offer.type
         when :room
-          tmp_outcome += offer.nightly_rate * reservation.nights
+          tmp_payout += offer.nightly_rate * reservation.nights
         when :apartment
-          tmp_outcome += offer.nightly_rate * reservation.nights * 0.9
+          tmp_payout += offer.nightly_rate * reservation.nights * 0.9
         when :entire_house
-          tmp_outcome += offer.nightly_rate * reservation.nights * 0.8
+          tmp_payout += offer.nightly_rate * reservation.nights * 0.8
         end
       end
 
-      outcome += tmp_outcome
+      outcome += tmp_payout
     end
     outcome
   end
