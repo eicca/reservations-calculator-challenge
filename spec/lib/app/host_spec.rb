@@ -6,9 +6,11 @@ describe Host do
   describe "#total_payout" do
     it "works correctly" do
       # Create few offers
-      cheerful_room = Offer.new(:room, "Cheerful Room in Berlin", 100)
-      sunny_apartment = Offer.new(:apartment, "Sunny Apartment", 200)
-      small_room = Offer.new(:room, "My small Room", 50)
+      cheerful_room = Offer.new(Offer::Type::ROOM,
+                                "Cheerful Room in Berlin", 100)
+      sunny_apartment = Offer.new(Offer::Type::APARTMENT,
+                                  "Sunny Apartment", 200)
+      small_room = Offer.new(Offer::Type::ENTIRE_HOUSE, "My small Room", 50)
 
       # Assign offers to the host
       host.add_offer(cheerful_room)

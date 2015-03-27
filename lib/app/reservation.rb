@@ -1,8 +1,10 @@
 # Represents reservation made by customer.
 class Reservation
-  attr_accessor :nights
-
   def initialize(nights)
     @nights = nights
+  end
+
+  def payout(nightly_rate)
+    @nights * nightly_rate
   end
 end
